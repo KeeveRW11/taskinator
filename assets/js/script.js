@@ -221,20 +221,15 @@ var editTask = function(taskId) {
   var loadTasks = function() {
     var savedTasks = localStorage.getItem("tasks");
     if (!savedTasks) {
+       
         return false;
       }
-      console.log("Saved tasks found!");
-      // else, load up saved tasks
-    
-      // parse into array of objects
-      savedTasks = JSON.parse(savedTasks);
-    
-      // loop through savedTasks array
-      for (var i = 0; i < savedTasks.length; i++) {
-        // pass each task object into the `createTaskEl()` function
-        createTaskEl(savedTasks[i]);
-      }
 
+      savedTasks = JSON.parse(savedTasks);
+
+      for (var i; i <savedTasks.length; i++)
+      createTaskEl(savedTasks[i]);
+         
     }
   
 formEl.addEventListener("submit", taskFormHandler);
